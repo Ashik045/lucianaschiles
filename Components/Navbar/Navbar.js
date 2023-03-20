@@ -42,12 +42,16 @@ const Navbar = () => {
                                     router.pathname === '/products' ? `${styles.active}` : ''
                                 }
                             >
-                                Products
+                                Shop
                             </p>
                         </Link>
-                        <Link href="/about" style={{textDecoration: 'none'}}>
-                            <p className={router.pathname === '/about' ? `${styles.active}` : ''}>
-                                About
+                        <Link href="/media" style={{textDecoration: 'none'}}>
+                            <p
+                                className={
+                                    router.pathname === '/media' ? `${styles.active}` : ''
+                                }
+                            >
+                                Media
                             </p>
                         </Link>
                         <Link href="/blogs" style={{textDecoration: 'none'}}>
@@ -55,20 +59,31 @@ const Navbar = () => {
                                 Blogs
                             </p>
                         </Link>
-                    </div>
+                        <Link href="/about" style={{textDecoration: 'none'}}>
+                            <p className={router.pathname === '/about' ? `${styles.active}` : ''}>
+                                About Us
+                            </p>
+                        </Link>
 
-                    <Link href="/cart" style={{textDecoration: 'none'}}>
-                        <div className={styles.cart}>
-                            <FaShoppingCart className={styles.cart_icon} />
-                            <span>{cartItem || 0}</span>
-                        </div>
-                    </Link>
-                </div>
+                        <Link href="/contact" style={{textDecoration: 'none'}}>
+                            <p className={router.pathname === '/contact' ? `${styles.active}` : ''}>
+                                Contact
+                            </p>
+                        </Link>
+                    </div>
+            </div>
+                
+                <div className={styles.cart}>
+                        <Link href="/cart" style={{textDecoration: 'none'}}>
+                                <FaShoppingCart className={styles.cart_icon} />
+                                <span>{cartItem || 0}</span>
+                        </Link>
+                    </div>
 
                 {toggler ? (
                     <FaTimes onClick={handleToggle} className={styles.toggle_icon} size={22} />
                 ) : (
-                    <FaStream onClick={handleToggle} className={styles.toggle_icon} />
+                    <FaStream onClick={handleToggle} className={styles.toggle_icon}  />
                 )}
                 {toggler && (
                     <div className={styles.res_menu}>
