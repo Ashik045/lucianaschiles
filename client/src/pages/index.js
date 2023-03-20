@@ -1,13 +1,19 @@
 import styles from '@/styles/Home.module.css';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
+import { useState } from 'react';
 import Header from '../../Components/Header/Header';
 import Navbar from '../../Components/Navbar/Navbar';
+import Offers from '../../Components/Offers/Offers';
 import Products from '../../Components/Products/Products';
+
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+export default function Home({products}) {
+    const [open, setOpen] = useState(true);
+    const closeModal = () => setOpen(false);
+
     return (
         <>
             <Head>
@@ -17,11 +23,42 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>
+
                 <Navbar />
                 <Header />
-                <Products />
+                <Products products={products} />
+                <Offers />
                 {/* sone */}
+                {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+                    <div className="modal">
+                    <a className="close" onClick={closeModal}>
+                        &times;
+                    </a>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
+                    omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
+                    ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
+                    doloribus. Odit, aut.
+                    </div>
+            </Popup> */}
             </main>
         </>
     );
 }
+
+// fetch all the necessary items
+export async function getStaticProps() {
+    const res = await fetch('https://lucianaschiles-backend.onrender.com/api/products/all')
+    // const res2 = await fetch('https://lucianaschiles-backend.onrender.com/api/blogs/all')
+
+    const data = await res.json();
+    // const data2 = await res2.json();
+
+    const products = data.message;
+    // const blogs = data2.message;
+    return {
+      props: {
+        products: products.slice(0, 8) || null,
+        // blogs: blogs || null,
+      },
+    }
+};
