@@ -17,6 +17,7 @@ import "swiper/css/pagination"
 import { FaQuoteLeft } from 'react-icons/fa'
 import { Autoplay, Pagination } from "swiper"
 
+// fake data - should be added from database
 const reviewDetails = [
     {
         id: 1,
