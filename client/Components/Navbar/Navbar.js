@@ -9,6 +9,8 @@ function Navbar() {
     const [toggler, setToggler] = useState(false);
     const [cartItem, setCartItem] = useState(0);
 
+    // animation on the navbar and add go to the top button
+
     useEffect(() => {
         const items =
             typeof window !== 'undefined' && JSON.parse(localStorage.getItem('productlist'));

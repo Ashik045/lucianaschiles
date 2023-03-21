@@ -7,7 +7,7 @@ const SpecialProducts = () => {
         <SectionHeader title="SPECIAL PRODUCTS" />
 
         <div className={styles.special_product__main}>
-            <h1>Product slide</h1>
+            <h1>Product slider</h1>
         </div>
     </div>
   )
