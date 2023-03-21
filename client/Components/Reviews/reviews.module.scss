@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+
+.review_sec {
+  margin-bottom: 50px;
+  .review_sec_main {
+    width: 100%;
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .review {
+      padding-bottom: 30px;
+      text-align: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+
+      .review_image {
+        object-fit: cover;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      span {
+        color: #eb6200;
+        position: fixed;
+        top: 0;
+        left: 43%;
+      }
+
+      p {
+        color: rgba(0, 0, 0, 0.514);
+        padding: 20px 0px;
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+      }
+
+      h3 {
+        font-family: "Roboto", sans-serif;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .review_sec {
+    .review_sec_main {
+      .review {
+        span {
+          color: #eb6200;
+          position: fixed;
+          top: 0;
+          left: 40%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .review_sec {
+    .review_sec_main {
+      .review {
+        width: 90%;
+        span {
+          color: #eb6200;
+          position: fixed;
+          top: 0;
+          left: 37%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .review_sec {
+    .review_sec_main {
+      .review {
+        width: 100%;
+        span {
+          color: #eb6200;
+          position: fixed;
+          top: 0;
+          left: 31%;
+        }
+      }
+    }
+  }
+}

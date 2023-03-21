@@ -2,10 +2,12 @@ import styles from '@/styles/Home.module.css';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { useState } from 'react';
+import Discount from '../../Components/Discount/Discount';
 import Header from '../../Components/Header/Header';
 import Navbar from '../../Components/Navbar/Navbar';
 import Products from '../../Components/Products/Products';
 import Reviews from '../../Components/Reviews/Reviews';
+import SpecialProducts from '../../Components/SpecialProducts/SpecialProducts';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -29,6 +31,8 @@ export default function Home({products}) {
                 <Products products={products} />
                 {/* <Offers /> */}
                 <Reviews />
+                <Discount />
+                <SpecialProducts />
                 {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                     <div className="modal">
                     <a className="close" onClick={closeModal}>
