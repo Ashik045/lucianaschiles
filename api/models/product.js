@@ -32,8 +32,11 @@ const productSchema = mongoose.Schema(
         pid: {
             type: String,
         },
+        category: {
+            type: String,
+        },
     },
-    { timestamps: true },
+    { timestamps: true }
 );
 
 const ProductModel = mongoose.model('Products', productSchema);

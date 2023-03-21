@@ -4,8 +4,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Header from '../../Components/Header/Header';
 import Navbar from '../../Components/Navbar/Navbar';
-import Offers from '../../Components/Offers/Offers';
 import Products from '../../Components/Products/Products';
+import Reviews from '../../Components/Reviews/Reviews';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -27,8 +27,8 @@ export default function Home({products}) {
                 <Navbar />
                 <Header />
                 <Products products={products} />
-                <Offers />
-                {/* sone */}
+                {/* <Offers /> */}
+                <Reviews />
                 {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                     <div className="modal">
                     <a className="close" onClick={closeModal}>
