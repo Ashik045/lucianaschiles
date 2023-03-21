@@ -4,7 +4,7 @@ import { FaCartPlus, FaRegEye, FaRegHeart, FaStar } from 'react-icons/fa';
 import styles from './product.module.scss';
 
 const Product = ({product, scale}) => {
-    // product functionality
+    // product functionalities
   return (
     <div className={styles.productt}>
             <Link href={`/products/${product._id}`} style={{ textDecoration: 'none' }}>

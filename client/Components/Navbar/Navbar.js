@@ -9,7 +9,7 @@ function Navbar() {
     const [toggler, setToggler] = useState(false);
     const [cartItem, setCartItem] = useState(0);
 
-    // animation on the navbar and add go to the top button
+    // Animation on the navbar and add go to the top button - when scrolling
 
     useEffect(() => {
         const items =
