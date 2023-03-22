@@ -21,25 +21,25 @@ import { Autoplay, Pagination } from "swiper"
 const reviewDetails = [
     {
         id: 1,
-        title: 'Amazing selection of chiles! I was able to find everything I needed for my recipe and more. Lucianaschiles has the freshest and most flavorful chiles I have ever tasted. Highly recommend! I have been shopping at Lucianaschiles for years, and they never disappoint. Their selection of chiles is second to none, and the quality is consistently top-notch.',
+        title: 'Amazing selection of chiles! I was able to find everything I needed for my recipe and more. Lucianaschiles has the freshest and most flavorful chiles I have ever tasted. Their selection of chiles is second to none, and the quality is consistently top-notch.',
         image: man1,
         name: 'Brandon Thomas',
     },
     {
         id: 2,
-        title: 'Lucianaschiles is the ultimate destination for any chile lover. Their selection is unmatched, with everything from mild to scorching hot varieties. The staff is incredibly knowledgeable and helpful, always willing to offer advice on which chiles will work best for your recipe. I highly recommend this shop for anyone looking to add some heat and complexity to their dishes.',
+        title: 'Lucianaschiles is the ultimate destination for any chile lover. Their selection is unmatched, with everything from mild to scorching hot varieties. I highly recommend this shop for anyone looking to add some heat and complexity to their dishes.',
         image: woman1,
         name: 'Joshua Lee',
     },
     {
         id: 3,
-        title: 'I recently discovered Lucianaschiles, and I am so glad I did. The shop has a cozy, welcoming atmosphere. But what really sets them apart is the quality of their chiles. They are incredibly fresh and flavorful, and the selection is outstanding. I have been using their chiles in everything from chili to marinades, and the results have been fantastic. Highly recommend this shop for any home cook.',
+        title: 'I recently discovered Lucianaschiles, and I am so glad I did. The shop has a cozy, welcoming atmosphere. But what really sets them apart is the quality of their chiles. They are incredibly fresh and flavorful, and the selection is outstanding. Highly recommend this shop for any home cook.',
         image: woman2,
         name: 'Samantha Rodriguez',
     },
     {
         id: 4,
-        title: 'Lucianaschiles is a must-visit for any foodie or home cook. Their selection of chiles is vast and varied, and the quality is superb. I particularly love their range of dried chiles, which are perfect for adding depth and complexity to dishes. Whether you are a seasoned chef or just starting out, you will find something to love at Lucianaschiles.',
+        title: 'Lucianaschiles is a must-visit for any foodie or home cook. Their selection of chiles is vast and varied, and the quality is superb. I particularly love their range of dried chiles, which are perfect for adding depth and complexity to dishes.',
         image: man2,
         name: 'Kevin Wong',
     },

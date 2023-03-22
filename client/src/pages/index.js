@@ -10,7 +10,6 @@ import Products from '../../Components/Products/Products';
 import Reviews from '../../Components/Reviews/Reviews';
 import SpecialProducts from '../../Components/SpecialProducts/SpecialProducts';
 
-
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home({products, blogs}) {
@@ -64,7 +63,7 @@ export async function getStaticProps() {
     return {
       props: {
         products: products.slice(0, 8) || null,
-        blogs: blogs || null,
+        blogs: blogs.slice(0, 6) || null,
       },
     }
 };

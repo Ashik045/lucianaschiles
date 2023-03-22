@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import styles from './specialproducts.module.scss';
 // import required modules
-import { Autoplay, Navigation } from 'swiper';
+import { Autoplay, FreeMode, Navigation } from 'swiper';
 
 // Import Swiper styles
 import { useRouter } from 'next/router';
@@ -26,6 +26,7 @@ const SpecialProducts = ({products}) => {
                     slidesPerView={1}
                     spaceBetween={10}
                     navigation
+                    freeMode={true}
                     autoplay={{
                         delay: 2500,
                         disableOnInteraction: false,
@@ -45,7 +46,7 @@ const SpecialProducts = ({products}) => {
                             spaceBetween: 50,
                         },
                     }}
-                     modules={[ Navigation, Autoplay]}
+                     modules={[FreeMode, Navigation, Autoplay]}
                     className="mySwiper"
                 >
                     {products?.map((product) => (
