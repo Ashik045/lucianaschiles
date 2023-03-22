@@ -1,0 +1,15 @@
+.blog_sec {
+  .blog_sec_main {
+    width: 100%;
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: grid;
+    grid-template-columns: 47% 47%;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
