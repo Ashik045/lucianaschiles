@@ -32,7 +32,7 @@ export default function Home({products}) {
                 {/* <Offers /> */}
                 <Reviews />
                 <Discount />
-                <SpecialProducts />
+                <SpecialProducts products={products} />
                 {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                     <div className="modal">
                     <a className="close" onClick={closeModal}>
