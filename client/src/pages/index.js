@@ -4,8 +4,10 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Blogs from '../../Components/Blogs/Blogs';
 import Discount from '../../Components/Discount/Discount';
+import Footer from '../../Components/Footer/Footer';
 import Header from '../../Components/Header/Header';
 import Navbar from '../../Components/Navbar/Navbar';
+import NewsLetter from '../../Components/NewsLetter/NewsLetter';
 import Products from '../../Components/Products/Products';
 import Reviews from '../../Components/Reviews/Reviews';
 import SpecialProducts from '../../Components/SpecialProducts/SpecialProducts';
@@ -34,6 +36,8 @@ export default function Home({products, blogs}) {
                 <Discount />
                 <SpecialProducts products={products} />
                 <Blogs blogs={blogs} />
+                <NewsLetter />
+                <Footer />
                 {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                     <div className="modal">
                     <a className="close" onClick={closeModal}>

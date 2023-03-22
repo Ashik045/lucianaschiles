@@ -1,0 +1,35 @@
+.footer_col {
+  h3 {
+    font-size: 25px;
+    color: white !important;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: white;
+    cursor: pointer;
+    line-height: 28px;
+    font-size: 17px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      text-decoration: underline;
+      color: #eb6200;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer_col {
+    h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+      color: white !important;
+    }
+    p {
+      color: white;
+      line-height: 25px;
+      font-size: 16px;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.newsletter {
+  background-color: #eb6200;
+  margin-top: 80px;
+
+  .newsletter_main {
+    width: 100%;
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 45% 40%;
+    grid-gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+    .left {
+      color: white;
+      padding: 0px 40px;
+
+      h1 {
+        font-size: 40px;
+      }
+    }
+
+    .right {
+      .right_form {
+        position: relative;
+
+        input[type="email"] {
+          font-size: 17px;
+          padding: 20px 15px;
+          width: 90%;
+          border: none;
+          border-radius: 3px;
+          color: black;
+          background-color: white;
+          outline: none;
+        }
+
+        input[type="submit"] {
+          position: absolute;
+          top: 5px;
+          right: 70px;
+          font-size: 17px;
+          padding: 15px 20px;
+          border: none;
+          border-radius: 3px;
+          font-weight: bold;
+          color: white;
+          background-color: rgb(44, 44, 44);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .newsletter {
+    .newsletter_main {
+      display: grid;
+      grid-template-columns: 45% 45%;
+
+      .left {
+        color: white;
+        padding: 0px 20px;
+      }
+
+      .right {
+        .right_form {
+          position: relative;
+          input[type="submit"] {
+            position: absolute;
+            top: 5px;
+            right: 50px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .newsletter {
+    .newsletter_main {
+      display: grid;
+      grid-template-columns: 90%;
+      height: 300px;
+
+      .left {
+        color: white;
+        padding: 0px 0px;
+      }
+
+      .right {
+        margin-top: -80px;
+        .right_form {
+          position: relative;
+          input[type="submit"] {
+            position: absolute;
+            top: 5px;
+            right: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .newsletter {
+    .newsletter_main {
+      .left {
+        padding: 0px 0px;
+        h1 {
+          font-size: 30px;
+        }
+      }
+
+      .right {
+        margin-top: -100px;
+        .right_form {
+          position: relative;
+
+          input[type="email"] {
+            font-size: 16px;
+            padding: 15px 10px;
+            width: 100%;
+          }
+
+          input[type="submit"] {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 14px;
+            padding: 11px 5px;
+          }
+        }
+      }
+    }
+  }
+}
