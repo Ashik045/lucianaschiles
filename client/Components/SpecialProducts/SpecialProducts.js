@@ -2,15 +2,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import styles from './specialproducts.module.scss';
 // import required modules
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import { Autoplay, Navigation } from 'swiper';
 
 // Import Swiper styles
+import { useRouter } from 'next/router';
+import { FaCarSide } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Product from '../Product/Product';
 
 const SpecialProducts = ({products}) => {
+  const router = useRouter()
+  const handlePurchase = () => {
+    router.push('/cart')
+  }
   return (
      <div className={styles.special_product}>
         <SectionHeader title="SPECIAL PRODUCTS" />
@@ -24,9 +30,7 @@ const SpecialProducts = ({products}) => {
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
-                    pagination={{
-                        clickable: true,
-                    }}
+                    
                     breakpoints={{
                         640: {
                             slidesPerView: 2,
@@ -41,7 +45,7 @@ const SpecialProducts = ({products}) => {
                             spaceBetween: 50,
                         },
                     }}
-                     modules={[Pagination, Navigation, Autoplay]}
+                     modules={[ Navigation, Autoplay]}
                     className="mySwiper"
                 >
                     {products?.map((product) => (
@@ -52,7 +56,9 @@ const SpecialProducts = ({products}) => {
             </Swiper>
 
             <div className={styles.special_product_discount}>
-
+                <span><FaCarSide /></span>
+                <h1>Flat Discount & Super First Delivery.</h1>
+                <button onClick={handlePurchase} type="button" className={styles.purches_btn}>PURCHASE NOW</button>
             </div>
         </div>
     </div>

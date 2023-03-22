@@ -6,10 +6,130 @@
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    //
+    margin-bottom: 30px;
 
     .slide {
       padding-bottom: 40px;
+    }
+
+    .special_product_discount {
+      margin-top: 30px;
+      padding: 40px 30px;
+      border: 2px dashed #eb6200;
+      border-radius: 760px;
+      display: grid;
+      grid-template-columns: 8% 67% 15%;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        font-size: 50px;
+        color: #eb6200;
+      }
+
+      h1 {
+        font-size: 42px;
+      }
+
+      .purches_btn {
+        padding: 10px 15px;
+        border: none;
+        background: none;
+        background-color: #eb6200;
+        border-radius: 5px;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: black;
+        }
+      }
+
+      &:hover {
+        border: 2px dotted #eb6200;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .special_product {
+    .special_product__main {
+      .special_product_discount {
+        margin-top: 30px;
+        padding: 30px 10px;
+        display: grid;
+        grid-template-columns: 10% 65% 20%;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          font-size: 50px;
+          color: #eb6200;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .purches_btn {
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .special_product {
+    .special_product__main {
+      .special_product_discount {
+        margin-top: 20px;
+        padding: 12px;
+        display: grid;
+        grid-template-columns: 10% 65% 18%;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          font-size: 50px;
+          color: #eb6200;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        .purches_btn {
+          padding: 10px 10px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .special_product {
+    .special_product__main {
+      .special_product_discount {
+        display: grid;
+        grid-template-columns: 95%;
+        justify-items: center;
+        align-items: center;
+
+        .purches_btn {
+          padding: 10px 10px;
+          font-size: 14px;
+          width: 150px;
+          height: 40px;
+        }
+      }
     }
   }
 }

@@ -2,6 +2,7 @@ import styles from '@/styles/Home.module.css';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 import { useState } from 'react';
+import Blogs from '../../Components/Blogs/Blogs';
 import Discount from '../../Components/Discount/Discount';
 import Header from '../../Components/Header/Header';
 import Navbar from '../../Components/Navbar/Navbar';
@@ -12,7 +13,7 @@ import SpecialProducts from '../../Components/SpecialProducts/SpecialProducts';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home({products}) {
+export default function Home({products, blogs}) {
     const [open, setOpen] = useState(true);
     const closeModal = () => setOpen(false);
 
@@ -33,6 +34,7 @@ export default function Home({products}) {
                 <Reviews />
                 <Discount />
                 <SpecialProducts products={products} />
+                <Blogs blogs={blogs} />
                 {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                     <div className="modal">
                     <a className="close" onClick={closeModal}>
@@ -52,17 +54,17 @@ export default function Home({products}) {
 // fetch all the necessary items
 export async function getStaticProps() {
     const res = await fetch('https://lucianaschiles-backend.onrender.com/api/products/all')
-    // const res2 = await fetch('https://lucianaschiles-backend.onrender.com/api/blogs/all')
+    const res2 = await fetch('https://lucianaschiles-backend.onrender.com/api/blogs/all')
 
     const data = await res.json();
-    // const data2 = await res2.json();
+    const data2 = await res2.json();
 
     const products = data.message;
-    // const blogs = data2.message;
+    const blogs = data2.message;
     return {
       props: {
         products: products.slice(0, 8) || null,
-        // blogs: blogs || null,
+        blogs: blogs || null,
       },
     }
 };
