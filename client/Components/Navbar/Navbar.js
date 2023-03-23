@@ -1,13 +1,25 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { FaShoppingCart, FaStream, FaTimes } from 'react-icons/fa';
+import { FaAngleUp, FaShoppingCart, FaStream, FaTimes } from 'react-icons/fa';
 import styles from './navbar.module.scss';
 
 function Navbar() {
     const router = useRouter();
     const [toggler, setToggler] = useState(false);
     const [cartItem, setCartItem] = useState(0);
+    const [toTop, setToTop]  = useState(false)
+
+    if (typeof window !== "undefined") {
+        window.onscroll = function() {
+            if(document.body.scrollTop >= 450 || document.documentElement.scrollTop >= 450) {
+                setToTop(true)
+            } else {
+              setToTop(false)
+            }
+        }
+      }
+    
 
     // Animation on the navbar and add go to the top button - when scrolling
 
@@ -122,6 +134,14 @@ function Navbar() {
                     </div>
                 )}
             </div>
+
+            {toTop && (
+                <a href="#top">
+                    <div className={styles.to_top}>
+                        <FaAngleUp className={styles.to_top_icon} />
+                    </div>
+                </a>
+            )}
         </div>
     );
 }

@@ -1,13 +1,14 @@
 import styles from '@/styles/Home.module.css';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Blogs from '../../Components/Blogs/Blogs';
 import Discount from '../../Components/Discount/Discount';
 import Footer from '../../Components/Footer/Footer';
 import Header from '../../Components/Header/Header';
 import Navbar from '../../Components/Navbar/Navbar';
 import NewsLetter from '../../Components/NewsLetter/NewsLetter';
+import Popup from '../../Components/Popup/Popup';
 import Products from '../../Components/Products/Products';
 import Reviews from '../../Components/Reviews/Reviews';
 import SpecialProducts from '../../Components/SpecialProducts/SpecialProducts';
@@ -17,6 +18,19 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Home({products, blogs}) {
     const [open, setOpen] = useState(true);
     const closeModal = () => setOpen(false);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setIsOpen(true);
+      }, 3000);
+  
+      return () => clearTimeout(timeout);
+    }, []);
+
+      const handleClose = () => {
+        setIsOpen(false);
+      };
 
     return (
         <>
@@ -29,6 +43,7 @@ export default function Home({products, blogs}) {
             <main className={styles.main}>
 
                 <Navbar />
+                {isOpen && <Popup handleClose={handleClose} />} 
                 <Header />
                 <Products products={products} />
                 {/* <Offers /> */}
@@ -38,17 +53,6 @@ export default function Home({products, blogs}) {
                 <Blogs blogs={blogs} />
                 <NewsLetter />
                 <Footer />
-                {/* <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-                    <div className="modal">
-                    <a className="close" onClick={closeModal}>
-                        &times;
-                    </a>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
-                    omnis delectus nemo, maxime molestiae dolorem numquam mollitia, voluptate
-                    ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
-                    doloribus. Odit, aut.
-                    </div>
-            </Popup> */}
             </main>
         </>
     );

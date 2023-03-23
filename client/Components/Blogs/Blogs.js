@@ -13,7 +13,6 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper";
 
 const Blogs = ({blogs}) => {
-  console.log(blogs);
   return (
     <div className={styles.blog_sec}>
     <SectionHeader title="ALL BLOGS"/>

@@ -1,6 +1,6 @@
 .navbar {
-  background-color: #f9f9f9;
-  height: 80px;
+  background-color: white;
+  height: 90px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -139,6 +139,26 @@
         -webkit-transform: translateX(-90px);
         transform: translateX(-90px);
       }
+    }
+  }
+
+  .to_top {
+    position: fixed;
+    bottom: 60px;
+    right: 70px;
+    z-index: 100;
+    padding: 4px 6px;
+    border-radius: 50%;
+    background: #eb6200;
+    transition: all 0.3s ease;
+    color: white;
+
+    .to_top_icon {
+      font-size: 30px;
+    }
+
+    &:hover {
+      background-color: rgb(49, 49, 49);
     }
   }
 }
