@@ -199,5 +199,15 @@
       justify-content: space-between;
       align-items: center;
     }
+
+    .to_top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+
+      .to_top_icon {
+        font-size: 28px;
+      }
+    }
   }
 }

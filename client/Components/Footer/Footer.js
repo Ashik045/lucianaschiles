@@ -57,8 +57,7 @@ function Footer() {
                         <h2 >Lucianaschiles</h2>
                     </div>
                     <p>
-                        We help buisnesses maximize their online persence with a personalized
-                        approach to online marketing.
+                    Lucianaschiles offers a wide variety of high-quality spices that will elevate your cooking to the next level.
                     </p>
                     <span>
                         <Link href="https://facebook.com" target="_blank">
