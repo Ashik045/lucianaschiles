@@ -1,10 +1,40 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
+import Discount from "../../../Components/Discount/Discount";
 import Footer from "../../../Components/Footer/Footer";
 import Navbar from "../../../Components/Navbar/Navbar";
+import Product from "../../../Components/Product/Product";
 import styles from '../../styles/products.module.scss';
 
-const index = ({poroducts}) => {
-    console.log(poroducts);
+const index = ({products}) => {
+    const [allProducts, setAllProducts] = useState(products)
+    const [filteredPost, setFilteredPost] = useState([]);
+    const [inpVal, setInpVal] = useState([]);
+
+    useEffect(() => {
+        const fetchData2 = () => {
+            if (inpVal?.length > 0) {
+                const filterData = allProducts.filter((item) =>
+                    Object.values(item.title).join('').toLowerCase().includes(inpVal?.toLowerCase())
+                );
+                setFilteredPost(filterData);
+            } else {
+                setFilteredPost(allProducts);
+            }
+
+            if (inpVal?.length === 0) {
+                setFilteredPost(allProducts);
+            }
+        };
+
+        fetchData2();
+    }, [allProducts, inpVal])
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        console.log(inpVal);
+    }
+
   return (
     <div className={styles.product_page}>
         <Head>
@@ -14,8 +44,25 @@ const index = ({poroducts}) => {
         </Head>
         <Navbar />
         <div className={styles.product_page_main}>
-            <h1>products</h1>
+            <div className={styles.search}>
+                
+                <form action="" onSubmit={handleSubmit}>
+                    <div className={styles.form_div}>
+                        <input type="text" placeholder="Search.." value={inpVal} onChange={(e) => setInpVal(e.target.value)} />
+                        <input type="submit" value="Search" className={styles.submit_btn} onClick={handleSubmit} />
+                    </div>
+                </form>
+            </div>
+
+            <div className={styles.all_products}>
+                {filteredPost.length === 0 ? <div className={styles.no_product}>
+                <p>No Product Found!</p>
+                </div> : filteredPost?.map((product) => (
+                    <Product key={product._id} product={product} scale  />
+                ))}
+            </div>
         </div>
+        <Discount />
         <Footer />
     </div>
   )
@@ -27,11 +74,11 @@ export async function getStaticProps() {
     const res = await fetch('https://lucianaschiles-backend.onrender.com/api/products/all')
 
     const data =    await res.json();
-    const poroducts = data.message;
+    const products = data.message;
 
     return {
         props: {
-            poroducts,
+            products,
         }
     }
 }

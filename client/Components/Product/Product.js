@@ -17,7 +17,7 @@ const Product = ({product, scale}) => {
                     objectFit="cover"
                 />
             </Link>
-            <p><FaStar /> <FaStar /> <FaStar /> <FaStar /> <FaStar /></p>
+            <p><FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /></p>
             <Link href={`/products/${product._id}`} style={{ textDecoration: 'none' }}>
                 <h3 className={styles.productt_title}>{product.title}</h3>
             </Link>
