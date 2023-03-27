@@ -8,7 +8,6 @@ export const UPDATEQUANTITY = (value) => ({
     payload: value
 })
 
-
 export const REMOVEFROMLIST = (id) => ({
     type: 'REMOVE_FROM_LIST',
     payload: id

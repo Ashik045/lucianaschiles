@@ -1,13 +1,13 @@
 import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
-import { Router } from "next/router";
+import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { FaCheckDouble, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Swal from "sweetalert2";
 import Footer from "../../../Components/Footer/Footer";
 import Navbar from "../../../Components/Navbar/Navbar";
-import { CartContext } from '../../../Context/CardContext';
+import { CartContext } from "../../../Context/CardContext";
 import styles from '../../styles/productdetail.module.scss';
 
 const productDetail = ({ product }) => {
@@ -15,6 +15,7 @@ const productDetail = ({ product }) => {
     const [quantity, setQuantity] = useState(1)
     const [cartItem, setCartItem] = useState([]);
     const [onCart, setOnCart] = useState(false);
+    const router = useRouter()
 
     const {state, dispatch} = useContext(CartContext);
     
@@ -69,7 +70,7 @@ const productDetail = ({ product }) => {
             title: 'Added to Cart',
           })
 
-          Router.push('/cart')
+          router.push('/cart')
         } catch (error) {
             console.log(error);
         }
