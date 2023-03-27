@@ -44,33 +44,6 @@ app.use('/', (req, res) => {
     });
 });
 
-// stripe
-// app.post('/api/checkout', async (req, res) => {
-//     console.log(req.body);
-//     // format data and send to the server
-//     const { items } = req.body;
-//     const lineItems = [];
-//     items.forEach((item) => {
-//         lineItems.push({
-//             price: item.id,
-//             quantity: items.quantity,
-//         });
-//     });
-
-//     const session = await stripe.checkout.sessions.create({
-//         line_items: lineItems,
-//         mode: 'payment',
-//         success_url: `${process.env.APP_DOMAIN}?success=true`,
-//         cancel_url: `${process.env.APP_DOMAIN}?canceled=true`,
-//     });
-
-//     res.send(
-//         JSON.stringify({
-//             url: session.url,
-//         })
-//     );
-// });
-
 // error handlers
 app.use((err, req, res, next) => {
     res.status(500).json({

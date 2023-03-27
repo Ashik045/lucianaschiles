@@ -91,7 +91,6 @@ const index = () => {
           }
           return {...product}
       })
-      console.log(newProduct);
       dispatch({type: 'UPDATE_QUANTITY', payload: newProduct})
   }
 
@@ -134,22 +133,6 @@ const index = () => {
       console.log(error);
       setLoading(false)
     }
-    
-    // try {
-    //   const stripe = await stripePromise;
-
-    //   const res = await makeRequest.post("/orders", {
-    //     cartItem, // products
-    //   });
-
-    //   await stripe.redirectToCheckout({
-    //     sessionId: res.data.stripeSession.id,
-    //   })
-      
-    //   console.log(totalPrice);
-    // } catch (error) {
-    //   console.log(error);
-    // }
   }
 
   return (
@@ -163,21 +146,21 @@ const index = () => {
             <div className={styles.cart_page_main}>
               <div className={styles.cart_page_main_cart}>
                   {cartItem.length === 0 ? ( <div className={styles.cart_page_empty}>
-                      <h3>Your cart is empty.</h3>
+                      <h3>Your cart is empty!!</h3>
                       <p>Find Products <Link href="/products" style={{textDecoration: 'underline'}}>Here.</Link></p>
                   </div>) : cartItem.map((item) => {
                     return (
                       <div key={item._id}>
                       <div className={styles.carts_product} >
                           <Link href={`/products/${item._id}`}>
-                              <Image src={item.images[0]} className={styles.carts_product_img} alt="cart img" height={180} width={200} />
+                              <Image src={item.images[0]} className={styles.carts_product_img} alt="cart img" height={170} width={190} />
                           </Link>
 
                           <div className={styles.carts_product_txt}>
-                              <Link href={`/products/${item._id}`}>
+                              <Link href={`/products/${item._id}`} style={{textDecoration: 'none'}}>
                                   <h3>{item.title}</h3>
                               </Link>
-                              <p>USD <b style={{fontSize: '17px'}}>{(item.price * item.quantity).toFixed(2)}</b></p>
+                              <p className={styles.price}>USD <b style={{fontSize: '17px'}}>{(item.price * item.quantity).toFixed(2)}</b></p>
 
                               <div className={styles.carts_product_txt_btm}>
                                   <p><FaMinus className={styles.carts_quantity} style={{display: item.quantity > 1 ? 'block' : 'none'}} onClick={() => handleClick('d', item._id)} /> <span>{item.quantity}</span> <FaPlus className={styles.carts_quantity} style={{display: item.quantity < 20 ? 'block' : 'none'}} onClick={() => handleClick('i', item._id)} /> </p>
