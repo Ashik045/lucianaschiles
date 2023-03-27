@@ -1,40 +1,3 @@
-@mixin header_btm_styles {
-  text-align: center;
-  padding: 10px;
-
-  span {
-    font-size: 24px;
-    color: rgba(0, 0, 0, 0.349);
-    padding: 17px 14px 10px;
-    background-color: rgba(0, 0, 0, 0.205);
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    transition: all 0.3s ease;
-  }
-
-  h4 {
-    padding-top: 25px;
-    padding-bottom: 10px;
-    transition: all 0.3s ease;
-  }
-
-  p {
-    color: rgba(0, 0, 0, 0.349);
-  }
-
-  &:hover {
-    span {
-      color: white;
-      background-color: #eb6200;
-    }
-
-    h4 {
-      color: #eb6200;
-    }
-  }
-}
-
 .header {
   margin-top: 70px;
   .header_main {
@@ -50,30 +13,6 @@
     .header_img {
       object-fit: cover;
       border-radius: 2px;
-    }
-  }
-
-  .header_bottom {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
-    width: 100%;
-    max-width: 1224px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    display: grid;
-    grid-template-columns: 24% 24% 24% 24%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-
-    .header_btm_item {
-      border-right: 2px solid rgba(0, 0, 0, 0.24);
-      @include header_btm_styles();
-    }
-
-    .header_btm_itemm {
-      @include header_btm_styles();
     }
   }
 }

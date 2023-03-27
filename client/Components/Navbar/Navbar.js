@@ -92,7 +92,7 @@ function Navbar() {
                 {toggler ? (
                     <FaTimes onClick={handleToggle} className={styles.toggle_icon} size={22} />
                 ) : (
-                    <FaStream onClick={handleToggle} className={styles.toggle_icon} />
+                    <FaStream onClick={handleToggle} className={styles.toggle_icon} size={18} />
                 )}
                 {toggler && (
                     <div className={styles.res_menu}>
@@ -108,7 +108,7 @@ function Navbar() {
                                         router.pathname === '/products' ? `${styles.active}` : ''
                                     }
                                 >
-                                    Products
+                                    Shop
                                 </p>
                             </Link>
                             <Link href="/about" style={{ textDecoration: 'none' }}>
