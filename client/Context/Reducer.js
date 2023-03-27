@@ -1,10 +1,10 @@
-const Reducer =  (state, action) => {
+const Reducer = (state, action) => {
     switch (action.type) {
         case 'ADD_TO_LIST':
             return {
                 ...state,
                 loading: false,
-                list: [ action.payload , ...state.list],
+                list: [action.payload, ...state.list],
                 error: false,
             };
         case 'UPDATE_QUANTITY':
@@ -21,9 +21,9 @@ const Reducer =  (state, action) => {
                 list: state.list.filter((item) => item.id !== action.payload),
                 error: false,
             };
-        default: 
+        default:
             return state;
     }
-}
+};
 
 export default Reducer;

@@ -1,21 +1,21 @@
-import Image from 'next/image'
-import { Swiper, SwiperSlide } from "swiper/react"
-import man1 from '../../images/man1.jpg'
-import man2 from '../../images/man2.jpg'
-import woman1 from '../../images/woman1.jpg'
-import woman2 from '../../images/woman2.jpg'
-import SectionHeader from '../SectionHeader/SectionHeader'
-import styles from './reviews.module.scss'
+import Image from 'next/image';
+import { FaQuoteLeft } from 'react-icons/fa';
+import { Autoplay, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import man1 from '../../images/man1.jpg';
+import man2 from '../../images/man2.jpg';
+import woman1 from '../../images/woman1.jpg';
+import woman2 from '../../images/woman2.jpg';
+import SectionHeader from '../SectionHeader/SectionHeader';
+import styles from './reviews.module.scss';
 
 // Import Swiper styles
-import "swiper/css"
-import "swiper/css/pagination"
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 // import "./styles.css"
 
 // import required modules
-import { FaQuoteLeft } from 'react-icons/fa'
-import { Autoplay, Pagination } from "swiper"
 
 // fake data - should be added from database
 const reviewDetails = [
@@ -43,44 +43,48 @@ const reviewDetails = [
         image: man2,
         name: 'Kevin Wong',
     },
-    
+];
 
-]
-
-const Reviews = () => {
-  return (
-    <div className={styles.review_sec}>
-        <SectionHeader title="HAPPY CLIENT" />
+function Reviews() {
+    return (
+        <div className={styles.review_sec}>
+            <SectionHeader title="HAPPY CLIENT" />
 
             <div className={styles.review_sec_main}>
-            <Swiper
-            autoplay={{
-                delay: 1500,
-                disableOnInteraction: false,
-                }}
-            pagination={{
-            dynamicBullets: true,
-            }}
-            loop={true}
-            modules={[Autoplay, Pagination]}
-            className="mySwiper"
-        >
-            
-                {reviewDetails.map((review) => {
-                    return <SwiperSlide> 
+                <Swiper
+                    autoplay={{
+                        delay: 1500,
+                        disableOnInteraction: false,
+                    }}
+                    pagination={{
+                        dynamicBullets: true,
+                    }}
+                    loop
+                    modules={[Autoplay, Pagination]}
+                    className="mySwiper"
+                >
+                    {reviewDetails.map((review) => (
+                        <SwiperSlide key={review.id}>
                             <div className={styles.review} key={review.id}>
-                                <span><FaQuoteLeft size={24} /></span>
-                                <Image src={review.image} width={100} height={100} alt="product review" className={styles.review_image} />
+                                <span>
+                                    <FaQuoteLeft size={24} />
+                                </span>
+                                <Image
+                                    src={review.image}
+                                    width={100}
+                                    height={100}
+                                    alt="product review"
+                                    className={styles.review_image}
+                                />
                                 <p>{review.title}</p>
                                 <h3>- {review.name}.</h3>
-                        </div>
-                    </SwiperSlide>
-                })}
-            
-            </Swiper>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </div>
         </div>
-    </div>
-  )
+    );
 }
 
-export default Reviews
+export default Reviews;

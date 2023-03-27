@@ -1,9 +1,10 @@
+/* eslint-disable react/no-array-index-key */
 import styles from './productcategory.module.scss';
 
-const ProductCategory = ({ categorBtn, filterItems, ctBtn }) => {
+function ProductCategory({ categorBtn, filterItems }) {
     // console.log(filterItems);
-  return (
-    <div className={styles.btn_group}>
+    return (
+        <div className={styles.btn_group}>
             {categorBtn.map((btns, index) => (
                 <button
                     key={index}
@@ -15,7 +16,7 @@ const ProductCategory = ({ categorBtn, filterItems, ctBtn }) => {
                 </button>
             ))}
         </div>
-  )
+    );
 }
 
-export default ProductCategory
+export default ProductCategory;

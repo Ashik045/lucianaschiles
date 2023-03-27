@@ -1,17 +1,18 @@
-import Link from 'next/link'
-import styles from './footercol.module.scss'
+/* eslint-disable react/no-array-index-key */
+import Link from 'next/link';
+import styles from './footercol.module.scss';
 
-const FooterCol = ({ FooterDetail, title }) => {
-  return (
-    <div className={styles.footer_col}>
-            <h3 >{title}</h3>
+function FooterCol({ FooterDetail, title }) {
+    return (
+        <div className={styles.footer_col}>
+            <h3>{title}</h3>
             {FooterDetail.map((items, i) => (
-                <Link key={i} href={items.link} style={{textDecoration: 'none'}}>
+                <Link key={i} href={items.link} style={{ textDecoration: 'none' }}>
                     <p key={items.id}>{items.text}</p>
                 </Link>
             ))}
-    </div>
-  )
+        </div>
+    );
 }
 
-export default FooterCol
+export default FooterCol;

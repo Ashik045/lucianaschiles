@@ -1,9 +1,8 @@
 import Link from 'next/link';
+import { AiOutlineCopyright } from 'react-icons/ai';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import FooterCol from '../FooterCol/FooterCol';
 import styles from './footer.module.scss';
-
-import { AiOutlineCopyright } from "react-icons/ai";
 
 const FooterDetail1 = [
     {
@@ -49,15 +48,16 @@ const FooterDetail2 = [
 function Footer() {
     return (
         <div className={styles.footer_sec}>
-        <div className={styles.footer_sec_bg_img}></div>
+            <div className={styles.footer_sec_bg_img} />
             <div className={styles.footer_sec_main}>
                 <div className={styles.first_col}>
                     <div className={styles.first_col_brand}>
                         {/* <Image src={brand} alt="footer-brand" height={35} width={35} /> */}
-                        <h2 >Lucianaschiles</h2>
+                        <h2>Lucianaschiles</h2>
                     </div>
                     <p>
-                    Lucianaschiles offers a wide variety of high-quality spices that will elevate your cooking to the next level.
+                        Lucianaschiles offers a wide variety of high-quality spices that will
+                        elevate your cooking to the next level.
                     </p>
                     <span>
                         <Link href="https://facebook.com" target="_blank">
@@ -76,17 +76,19 @@ function Footer() {
                 <FooterCol FooterDetail={FooterDetail1} title="Basic Info" />
 
                 <div className={styles.second_col}>
-                    <h3 >Contact</h3>
+                    <h3>Contact</h3>
                     <p>Mexico, US</p>
                     <p>+880000000000</p>
                     <p className={styles.second_col_email}>Office@merchantquickfix.com</p>
-                    
                 </div>
             </div>
 
             <div className={styles.footer_sec_btm}>
-                <div className={styles.footer_sec_btm_line}></div>
-                <p><AiOutlineCopyright style={{marginRight: '3px'}} /> Copyrights Lucianaschiles 2023. All Rights Reserved.</p>
+                <div className={styles.footer_sec_btm_line} />
+                <p>
+                    <AiOutlineCopyright style={{ marginRight: '3px' }} /> Copyrights Lucianaschiles
+                    2023. All Rights Reserved.
+                </p>
             </div>
         </div>
     );

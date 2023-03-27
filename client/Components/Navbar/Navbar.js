@@ -8,18 +8,17 @@ function Navbar() {
     const router = useRouter();
     const [toggler, setToggler] = useState(false);
     const [cartItem, setCartItem] = useState(0);
-    const [toTop, setToTop]  = useState(false)
+    const [toTop, setToTop] = useState(false);
 
-    if (typeof window !== "undefined") {
-        window.onscroll = function() {
-            if(document.body.scrollTop >= 450 || document.documentElement.scrollTop >= 450) {
-                setToTop(true)
+    if (typeof window !== 'undefined') {
+        window.onscroll = function () {
+            if (document.body.scrollTop >= 450 || document.documentElement.scrollTop >= 450) {
+                setToTop(true);
             } else {
-              setToTop(false)
+                setToTop(false);
             }
-        }
-      }
-    
+        };
+    }
 
     // Animation on the navbar and add go to the top button - when scrolling
 

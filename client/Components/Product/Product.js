@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { FaCartPlus, FaRegEye, FaRegHeart, FaStar } from 'react-icons/fa';
 import styles from './product.module.scss';
 
-const Product = ({product, scale}) => {
+function Product({ product, scale }) {
     // product functionalities
-  return (
-    <div className={styles.productt}>
+    return (
+        <div className={styles.productt}>
             <Link href={`/products/${product._id}`} style={{ textDecoration: 'none' }}>
                 <Image
                     src={product.images[0]}
@@ -17,28 +17,38 @@ const Product = ({product, scale}) => {
                     objectFit="cover"
                 />
             </Link>
-            <p><FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} /></p>
+            <p>
+                <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} />{' '}
+                <FaStar className={styles.star_icon} /> <FaStar className={styles.star_icon} />{' '}
+                <FaStar className={styles.star_icon} />
+            </p>
             <Link href={`/products/${product._id}`} style={{ textDecoration: 'none' }}>
                 <h3 className={styles.productt_title}>{product.title}</h3>
             </Link>
-            
+
             <span>
                 USD <b style={{ marginLeft: '4px' }}> {product.price}</b>
             </span>
 
             <div className={styles.product_icons}>
-                <Link href="favourite" style={{textDecoration: 'none'}}>
-                    <div className={styles.heart}><FaRegHeart /></div>
+                <Link href="favourite" style={{ textDecoration: 'none' }}>
+                    <div className={styles.heart}>
+                        <FaRegHeart />
+                    </div>
                 </Link>
 
                 {/* add to card funtionality should be added */}
-                    <div className={styles.cart}><FaCartPlus /></div>
-                <Link href={`/products/${product._id}`} style={{textDecoration: 'none'}}>
-                    <div className={styles.eye}><FaRegEye /></div>
+                <div className={styles.cart}>
+                    <FaCartPlus />
+                </div>
+                <Link href={`/products/${product._id}`} style={{ textDecoration: 'none' }}>
+                    <div className={styles.eye}>
+                        <FaRegEye />
+                    </div>
                 </Link>
             </div>
         </div>
     );
 }
 
-export default Product
+export default Product;
