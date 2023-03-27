@@ -111,6 +111,25 @@ function Navbar() {
                                     Shop
                                 </p>
                             </Link>
+                            <Link href="/media" style={{ textDecoration: 'none' }}>
+                                <p
+                                    className={
+                                        router.pathname === '/media' ? `${styles.active}` : ''
+                                    }
+                                >
+                                    Media
+                                </p>
+                            </Link>
+
+                            <Link href="/blogs" style={{ textDecoration: 'none' }}>
+                                <p
+                                    className={
+                                        router.pathname === '/blogs' ? `${styles.active}` : ''
+                                    }
+                                >
+                                    Blogs
+                                </p>
+                            </Link>
                             <Link href="/about" style={{ textDecoration: 'none' }}>
                                 <p
                                     className={
@@ -120,13 +139,13 @@ function Navbar() {
                                     About
                                 </p>
                             </Link>
-                            <Link href="/blogs" style={{ textDecoration: 'none' }}>
+                            <Link href="/contact" style={{ textDecoration: 'none' }}>
                                 <p
                                     className={
-                                        router.pathname === '/blogs' ? `${styles.active}` : ''
+                                        router.pathname === '/contact' ? `${styles.active}` : ''
                                     }
                                 >
-                                    Blogs
+                                    Contact
                                 </p>
                             </Link>
                         </div>
