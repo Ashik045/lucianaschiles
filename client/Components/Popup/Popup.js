@@ -42,7 +42,8 @@ function Popup({ handleClose }) {
                 <span onClick={handleClose}>
                     <FaTimes />
                 </span>
-                <h2>Join Our Newsletter Now</h2>
+                <h2>JOIN US TODAY!</h2>
+                <p>Get 15% off your purchase.</p>
                 <form action="" className={styles.right_form} onSubmit={handleSubmit}>
                     <input
                         type="email"
@@ -58,10 +59,8 @@ function Popup({ handleClose }) {
                     <input type="checkbox" /> Notify me about related content and special offers.
                 </p>
 
-                <p>
-                    If you opt in above we use this information send related content, discounts and
-                    other special offers.
-                </p>
+                <p>A once a week date in your inbox</p>
+                <p>Sign up for recipes, natural remedies, inspiration and exclusive promotions.</p>
             </div>
         </div>
     );

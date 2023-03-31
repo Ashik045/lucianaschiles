@@ -23,7 +23,7 @@ export default function Home({ products, blogs }) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setIsOpen(true);
-        }, 3000);
+        }, 5000);
 
         return () => clearTimeout(timeout);
     }, []);
@@ -41,6 +41,7 @@ export default function Home({ products, blogs }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="main">
+                {/* <TopText /> */}
                 <Navbar />
                 {isOpen && <Popup handleClose={handleClose} />}
                 <Header />

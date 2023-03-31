@@ -9,6 +9,23 @@
   width: 100%;
   z-index: 100;
 
+  .navbar_top {
+    height: 30px;
+    max-width: 1224px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: red;
+    }
+  }
+
   .navbar_main {
     width: 100%;
     max-width: 1224px;

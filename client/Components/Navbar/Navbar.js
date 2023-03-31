@@ -35,6 +35,9 @@ function Navbar() {
 
     return (
         <div className={styles.navbar}>
+            <div className={styles.navbar_top}>
+                <p>Free Continental U.S. Shipping</p>
+            </div>
             <div className={styles.navbar_main}>
                 <Link href="/" style={{ textDecoration: 'none' }}>
                     <div className={styles.brand}>
