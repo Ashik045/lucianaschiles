@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Blogs from '../../Components/Blogs/Blogs';
 import Discount from '../../Components/Discount/Discount';
 import Footer from '../../Components/Footer/Footer';
-import Header from '../../Components/Header/Header';
+import HeaderOne from '../../Components/HeaderOne/HeaderOne';
 import Navbar from '../../Components/Navbar/Navbar';
 import NewsLetter from '../../Components/NewsLetter/NewsLetter';
 import Popup from '../../Components/Popup/Popup';
@@ -45,7 +45,7 @@ export default function Home({ products, blogs }) {
                 <TopText />
                 <Navbar />
                 {isOpen && <Popup handleClose={handleClose} />}
-                <Header />
+                <HeaderOne />
                 <Products products={products} />
                 {/* <Offers /> */}
                 <Reviews />
