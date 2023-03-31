@@ -74,6 +74,13 @@ function Header() {
                 </Swiper>
             </div>
 
+            <h4 className={styles.intro}>
+                Luciana&apos;s Chiles & Spices is dedicated to offering all-natural Mexican dry
+                chiles and exquisite botanicals, such as Flor de Jamaica, for an authentic culinary
+                experience. Immerse yourself in the vibrant flavors and rich traditions of Mexico
+                through our carefully curated selection of chiles, spices, and unique botanicals.
+            </h4>
+
             <Offers />
         </div>
     );

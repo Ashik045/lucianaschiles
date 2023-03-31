@@ -12,6 +12,7 @@ import Popup from '../../Components/Popup/Popup';
 import Products from '../../Components/Products/Products';
 import Reviews from '../../Components/Reviews/Reviews';
 import SpecialProducts from '../../Components/SpecialProducts/SpecialProducts';
+import TopText from '../../Components/TopText/TopText';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -41,7 +42,7 @@ export default function Home({ products, blogs }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="main">
-                {/* <TopText /> */}
+                <TopText />
                 <Navbar />
                 {isOpen && <Popup handleClose={handleClose} />}
                 <Header />

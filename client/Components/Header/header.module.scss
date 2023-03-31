@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 .header {
   margin-top: 70px;
   .header_main {
@@ -14,6 +16,18 @@
       object-fit: cover;
       border-radius: 2px;
     }
+  }
+
+  .intro {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+    color: rgba(0, 0, 0, 0.747);
+    line-height: 27px;
   }
 }
 
@@ -38,6 +52,12 @@
         object-fit: cover;
         border-radius: 2px;
       }
+    }
+
+    .intro {
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .header_bottom {

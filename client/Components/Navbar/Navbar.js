@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { FaAngleUp, FaShoppingCart, FaStream, FaTimes } from 'react-icons/fa';
+import logo from '../../images/logo1.png';
 import styles from './navbar.module.scss';
 
 function Navbar() {
@@ -35,13 +37,10 @@ function Navbar() {
 
     return (
         <div className={styles.navbar}>
-            <div className={styles.navbar_top}>
-                <p>Free Continental U.S. Shipping</p>
-            </div>
             <div className={styles.navbar_main}>
                 <Link href="/" style={{ textDecoration: 'none' }}>
                     <div className={styles.brand}>
-                        <h3>Lucianaschiles</h3>
+                        <Image src={logo} alt="lucianaschiles logo" height={0} width={130} />
                     </div>
                 </Link>
 
