@@ -18,7 +18,7 @@ import styles from '../../styles/cart.module.scss';
 
 const index = () => {
     const [cartItem, setCartItem] = useState([]);
-    const [shippingPrice, setShippingPrice] = useState(5);
+    const [shippingPrice, setShippingPrice] = useState(0);
     const [quantitty, setQuantitty] = useState(1);
     const [subTotal, setSubTotal] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
@@ -241,8 +241,8 @@ const index = () => {
                             <p>USD {subTotal}</p>
                         </div>
                         <div className={styles.checkout_detail}>
-                            <p>Shipping Price </p>
-                            <p>USD {shippingPrice}</p>
+                            <p>Shipping </p>
+                            <p>Free</p>
                         </div>
                         <hr />
                         <div className={styles.checkout_detail}>

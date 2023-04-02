@@ -15,7 +15,7 @@ import styles from './specialproducts.module.scss';
 function SpecialProducts({ products }) {
     const router = useRouter();
     const handlePurchase = () => {
-        router.push('/cart');
+        router.push('/products');
     };
     return (
         <div className={styles.special_product}>
