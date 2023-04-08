@@ -25,6 +25,11 @@ const FooterDetail1 = [
         link: '/blogs',
         text: 'Blogs',
     },
+    {
+        id: 5,
+        link: '/media',
+        text: 'Media',
+    },
 ];
 
 const FooterDetail2 = [
@@ -56,8 +61,11 @@ function Footer() {
                         <h2>Lucianaschiles</h2>
                     </div>
                     <p>
-                        Lucianaschiles offers a wide variety of high-quality spices that will
-                        elevate your cooking to the next level.
+                        Luciana&apos;s Chiles & Spices is dedicated to offering all-natural Mexican
+                        dry chiles and exquisite botanicals, such as Flor de Jamaica, for an
+                        authentic culinary experience. Immerse yourself in the vibrant flavors and
+                        rich traditions of Mexico through our carefully curated selection of chiles,
+                        spices, and unique botanicals.
                     </p>
                     <span>
                         <Link href="https://facebook.com" target="_blank">

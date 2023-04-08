@@ -24,7 +24,7 @@
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 70px;
     display: grid;
     grid-template-columns: 30% 21% 21% 21%;
@@ -46,7 +46,7 @@
 
       p {
         color: white;
-        line-height: 25px;
+        line-height: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
       }
@@ -130,7 +130,7 @@
 
 @media screen and (max-width: 576px) {
   .footer_sec {
-    height: 750px;
+    height: 840px;
 
     .footer_sec_main {
       padding-top: 40px;
@@ -151,7 +151,6 @@
 
         p {
           color: white;
-          line-height: 23px;
           margin-top: 10px;
           margin-bottom: 10px;
         }

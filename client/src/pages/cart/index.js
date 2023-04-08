@@ -67,6 +67,7 @@ const index = () => {
         setSubTotal(subTotalVal);
         // console.log(subTotalVal);
 
+        // calculate the price
         setTotalPrice(Number(subTotal) + Number(shippingPrice));
     });
 
@@ -76,7 +77,7 @@ const index = () => {
     //   return cartItem.indexOf(value) === index;
     // });
 
-    // Something wrong with the quantity state(when updating the quantity its removed)
+    // Something wrong with the quantity state(fixed)
     const handleClick = (state, itemId) => {
         const newProduct = cartItem.map((product) => {
             let newItem;

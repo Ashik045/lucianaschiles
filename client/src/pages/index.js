@@ -24,7 +24,7 @@ export default function Home({ products, blogs }) {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setIsOpen(true);
-        }, 5000);
+        }, 6000);
 
         return () => clearTimeout(timeout);
     }, []);
@@ -44,7 +44,7 @@ export default function Home({ products, blogs }) {
             <main className="main">
                 <TopText />
                 <Navbar />
-                {isOpen && <Popup handleClose={handleClose} />}
+                {isOpen && <Popup handleClose={handleClose} setIsOpen={setIsOpen} />}
                 <HeaderOne />
                 <Products products={products} />
                 {/* <Offers /> */}

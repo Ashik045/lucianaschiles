@@ -1,9 +1,12 @@
-import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { useRef, useState } from 'react';
 import Swal from 'sweetalert2';
 import styles from './newsletter.module.scss';
 
 function NewsLetter() {
     const [email, setEmail] = useState('');
+    const form = useRef();
+
     const Toast = Swal.mixin({
         toast: true,
         position: 'bottom-end',
@@ -22,12 +25,23 @@ function NewsLetter() {
     const handleSubmit = (e) => {
         e.preventDefault();
         try {
+            emailjs
+                .sendForm('service_oa2im2q', 'template_l5cjev4', form.current, 'mqlVmI9Fm3eB-SSCf')
+                .then(
+                    (result) => {
+                        console.log(result.text);
+                    },
+                    (error) => {
+                        console.log(error.text);
+                    }
+                );
+
             Toast.fire({
                 icon: 'success',
-                title: 'Subscribed successfully',
+                title: 'Subscribed Successfully.',
             });
 
-            console.log(email);
+            setEmail('');
         } catch (error) {
             console.log(error);
         }
@@ -41,10 +55,11 @@ function NewsLetter() {
                 </div>
 
                 <div className={styles.right}>
-                    <form action="" className={styles.right_form} onSubmit={handleSubmit}>
+                    <form ref={form} className={styles.right_form} onSubmit={handleSubmit}>
                         <input
                             type="email"
                             placeholder="Enter your email.."
+                            name="user_email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required

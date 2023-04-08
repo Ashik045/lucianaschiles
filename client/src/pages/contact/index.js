@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 /* eslint-disable react-hooks/rules-of-hooks */
+import emailjs from '@emailjs/browser';
 import Head from 'next/head';
 import { useRef, useState } from 'react';
 import Swal from 'sweetalert2';
@@ -30,18 +31,17 @@ const index = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         try {
-            // emailjs
-            //     .sendForm('service_8sbjwd9', 'template_4f8gco8', form.current, 'xFCXJaziIzO_vQ1c5')
-            //     .then(
-            //         (result) => {
-            //             console.log(result.text);
-            //         },
-            //         (error) => {
-            //             console.log(error.text);
-            //         }
-            //     );
+            emailjs
+                .sendForm('service_oa2im2q', 'template_l5cjev4', form.current, 'mqlVmI9Fm3eB-SSCf')
+                .then(
+                    (result) => {
+                        console.log(result.text);
+                    },
+                    (error) => {
+                        console.log(error.text);
+                    }
+                );
 
-            console.log(name, message, email);
             Toast.fire({
                 icon: 'success',
                 title: 'Successfully sent.',
@@ -49,6 +49,7 @@ const index = () => {
 
             setName('');
             setEmail('');
+            setMessage('');
         } catch (error) {
             console.log(error);
         }
@@ -100,6 +101,7 @@ const index = () => {
                             placeholder="Leave Your Message.."
                             cols="40"
                             rows="10"
+                            name="message"
                             value={message}
                             required
                             onChange={(e) => setMessage(e.target.value)}

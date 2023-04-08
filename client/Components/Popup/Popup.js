@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { useRef, useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import styles from './popup.module.scss';
 
-function Popup({ handleClose }) {
+function Popup({ handleClose, setIsOpen }) {
     const [email, setEmail] = useState('');
+    const form = useRef();
+
     const Toast = Swal.mixin({
         toast: true,
         position: 'bottom-end',
@@ -24,16 +27,28 @@ function Popup({ handleClose }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         try {
+            emailjs
+                .sendForm('service_oa2im2q', 'template_l5cjev4', form.current, 'mqlVmI9Fm3eB-SSCf')
+                .then(
+                    (result) => {
+                        console.log(result.text);
+                    },
+                    (error) => {
+                        console.log(error.text);
+                    }
+                );
+
             Toast.fire({
                 icon: 'success',
-                title: 'Subscribed successfully!',
+                title: 'Subscribed Successfully.',
             });
 
-            console.log(email);
+            setIsOpen(false);
+
+            setEmail('');
         } catch (error) {
             console.log(error);
         }
-        setEmail('');
     };
 
     return (
@@ -44,10 +59,11 @@ function Popup({ handleClose }) {
                 </span>
                 <h2>JOIN US TODAY!</h2>
                 <p>Get 15% off your purchase.</p>
-                <form action="" className={styles.right_form} onSubmit={handleSubmit}>
+                <form ref={form} className={styles.right_form} onSubmit={handleSubmit}>
                     <input
                         type="email"
                         placeholder="Enter your email.."
+                        name="user_email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
